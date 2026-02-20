@@ -1,0 +1,7 @@
+<h2>Upload Images</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="images" multiple required>
+    <button type="submit">Convert</button>
+</form>
