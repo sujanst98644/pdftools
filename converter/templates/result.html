@@ -1,7 +1,23 @@
-<h2>Result</h2>
+{% extends 'base.html' %}
 
-{% for file in files %}
-    <a href="{{ file }}" target="_blank">Download</a><br>
-{% endfor %}
+{% block content %}
 
-<a href="/">Go Home</a>
+<h2 class="text-2xl font-bold mb-6 text-gray-700">Result</h2>
+
+<div class="space-y-4">
+    {% for file in files %}
+        <a href="{{ file }}" target="_blank"
+           class="block bg-gray-200 hover:bg-gray-300 p-4 rounded-lg shadow">
+            Download File
+        </a>
+    {% endfor %}
+</div>
+
+<div class="mt-6">
+    <a href="/"
+       class="text-indigo-600 hover:underline">
+        ← Back to Home
+    </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-indigo-600 p-4 shadow-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-white text-xl font-bold">PDF Tools</h1>
+            <a href="/" class="text-white hover:underline">Home</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

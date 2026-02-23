@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-2xl font-bold mb-6 text-gray-700">Merge PDFs</h2>
+
+<form method="POST" enctype="multipart/form-data"
+      class="space-y-4">
+    {% csrf_token %}
+
+    <input type="file" name="files" multiple
+           class="block w-full border p-3 rounded-lg shadow-sm">
+
+    <button type="submit"
+            class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg shadow-md">
+        Merge
+    </button>
+</form>
+
+{% endblock %}

@@ -1,5 +1,31 @@
-<h1>File Converter</h1>
+{% extends 'base.html' %}
 
-<a href="{% url 'pdf_to_image' %}">PDF to Images</a><br>
-<a href="{% url 'image_to_pdf' %}">Images to PDF</a><br>
-<a href="{% url 'merge_pdf' %}">Merge PDFs</a>
+{% block content %}
+
+<h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+    Simple & Powerful PDF Tools
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+    <a href="{% url 'pdf_to_image' %}"
+       class="bg-blue-500 hover:bg-blue-600 text-white p-6 rounded-xl shadow-md text-center transition duration-200">
+        <h3 class="text-xl font-semibold">PDF to Images</h3>
+        <p class="mt-2 text-sm">Convert PDF pages into PNG images</p>
+    </a>
+
+    <a href="{% url 'image_to_pdf' %}"
+       class="bg-green-500 hover:bg-green-600 text-white p-6 rounded-xl shadow-md text-center transition duration-200">
+        <h3 class="text-xl font-semibold">Images to PDF</h3>
+        <p class="mt-2 text-sm">Combine images into a PDF file</p>
+    </a>
+
+    <a href="{% url 'merge_pdf' %}"
+       class="bg-purple-500 hover:bg-purple-600 text-white p-6 rounded-xl shadow-md text-center transition duration-200">
+        <h3 class="text-xl font-semibold">Merge PDFs</h3>
+        <p class="mt-2 text-sm">Merge multiple PDFs into one</p>
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Django-specific
+*.log
+*.pot
+db.sqlite3
+local_settings.py
+media/  # Directory for user-uploaded media files, which can be large and should not be tracked
+static/ # Directory for collected static files, which are generated during deployment
+
+# IDE-specific (optional, consider a global gitignore instead)
+.idea/      # For PyCharm
+.vscode/    # For VS Code
+*.swp       # For Vim
+*.sublime-workspace # For Sublime Text
+
+# OS-specific
+.DS_Store # macOS
