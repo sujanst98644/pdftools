@@ -1,0 +1,30 @@
+# Python & Virtual Env
+**/__pycache__
+*.py[cod]
+venv/
+env/
+.env
+
+# Django specific
+db.sqlite3
+*.log
+# staticfiles/  # Uncomment if using nginx/whitenoise for static
+# media/        # Uncomment if using volume for media
+
+# Build & Package
+build/
+dist/
+*.egg-info/
+
+# Tests
+.pytest_cache/
+.tox/
+.coverage
+
+# IDE & OS
+.git/
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+
