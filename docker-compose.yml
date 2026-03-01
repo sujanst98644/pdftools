@@ -4,9 +4,9 @@ services:
       container_name: pdftools_db
       restart: always
       environment:
-        POSTGRES_DB: pdftoolsdb
-        POSTGRES_USER: pdftoolsuser
-        POSTGRES_PASSWORD: 26183342
+        POSTGRES_DB: ${DB_NAME}
+        POSTGRES_USER: ${DB_USER}
+        POSTGRES_PASSWORD: ${DB_PASSWORD}
       volumes:
         - postgres_data:/var/lib/postgresql/data
       ports:
@@ -15,15 +15,25 @@ services:
     web:
       build: .
       container_name: pdftools_web
-      command: python manage.py runserver 0.0.0.0:8000
+      command: gunicorn pdftools.wsgi:application --bind 0.0.0.0:8000
       volumes:
         - .:/app
-      ports:
-        - "8000:8000"
+      environment:
+        DJANGO_SETTINGS_MODULE: pdftools.settings.production
       env_file:
         - .env
       depends_on:
         - db
-
+    
+    nginx:
+      image: nginx:latest
+      ports:
+       - "80:80"
+      volumes:
+       - .:/app
+       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf 
+       - ./media:/app/media
+      depends_on:
+       - web
 volumes:
   postgres_data:
